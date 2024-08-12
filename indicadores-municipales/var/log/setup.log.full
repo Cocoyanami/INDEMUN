@@ -1,0 +1,39 @@
+2024/05/17 09:30:25 Starting OSGeo4W install, version 2.579
+2024/05/17 09:30:25 using locales .1252
+2024/05/17 09:30:25 Current Directory: C:\Users\LABORA~1\AppData\Local\Temp
+2024/05/17 09:30:25 Root Directory: C:\OSGeo4W
+Could not open Service control manager
+2024/05/17 09:30:34 source: from cwd
+2024/05/17 09:31:17 mbox yesno: You should not choose a root path that include spaces in directory names.  Proceed anyway?
+2024/05/17 09:31:20 root: C:\Users\Laboratorio Jesus\proyecto-indicadores\indicadores-municipales
+2024/05/17 09:31:22 Selected local directory: C:\Users\LABORA~1\AppData\Local\Temp
+2024/05/17 09:31:22 Menu name: OSGeo4W
+Found ini file - C:\Users\LABORA~1\AppData\Local\Temp/https%3a%2f%2fdownload.osgeo.org%2fosgeo4w%2fv2%2f/x86_64/setup.ini
+2024/05/17 09:31:23 io_stream_cygfile: fopen(/etc/setup/installed.db) failed 2 No such file or directory
+ The package <gdal-dev-ecw-3.10.0-554-758af97650-1> has a non-free license it was successfully added 
+ The package <gdal-dev-ecw-3.10.0-553-0367605087-1> has a non-free license it was successfully added 
+ The package <gdal-dev-filegdb-3.10.0-554-758af97650-1> has a non-free license it was successfully added 
+ The package <gdal-dev-filegdb-3.10.0-553-0367605087-1> has a non-free license it was successfully added 
+ The package <gdal-ecw-3.8.5-1> has a non-free license it was successfully added 
+ The package <gdal-ecw-3.8.4-1> has a non-free license it was successfully added 
+ The package <gdal-filegdb-3.8.5-1> has a non-free license it was successfully added 
+ The package <gdal-filegdb-3.8.4-1> has a non-free license it was successfully added 
+ The package <gdal-mrsid-3.8.4-1> has a non-free license it was successfully added 
+ The package <hdf5-1.14.0-1> has a non-free license it was successfully added 
+ The package <hdf5-devel-1.14.0-1> has a non-free license it was successfully added 
+ The package <hdf5-tools-1.14.0-1> has a non-free license it was successfully added 
+ The package <msodbcsql-devel-18.0-2> has a non-free license it was successfully added 
+ The package <msodbcsql-devel-18.0-1> has a non-free license it was successfully added 
+ The package <oci-21.13-1> has a non-free license it was successfully added 
+ The package <oci-19.11-1> has a non-free license it was successfully added 
+ The package <oci-devel-21.13-1> has a non-free license it was successfully added 
+ The package <oci-devel-19.11-1> has a non-free license it was successfully added 
+ The package <szip-2.1.1-4> has a non-free license it was successfully added 
+ The package <szip-2.1.1-3> has a non-free license it was successfully added 
+ The package <szip-devel-2.1.1-4> has a non-free license it was successfully added 
+ The package <szip-devel-2.1.1-3> has a non-free license it was successfully added 
+2024/05/17 09:31:23 io_stream_cygfile: fopen(/etc/setup/timestamp) failed 2 No such file or directory
+Visited: 0 nodes out of 46 while creating dependency order.
+Dependency order of packages: 
+2024/05/17 09:31:43 note: Nothing needed to be installed
+2024/05/17 09:31:43 Ending OSGeo4W install

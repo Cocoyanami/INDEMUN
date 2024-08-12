@@ -1,0 +1,83 @@
+.estadisticas-container {
+  margin: 0px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100vh; /* Altura completa de la ventana */
+  box-sizing: border-box; /* Incluye padding y border en la altura total */
+  display: flex;
+  flex-direction: column;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-top: 10px; /* Añadir margen superior para separar los filtros de los botones */
+}
+
+.estadisticas-container select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.estadisticas-container select:focus {
+  border-color: #80bdff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.chart-container {
+  position: relative;
+  flex-grow: 1; /* Deja que el contenedor del gráfico crezca para llenar el espacio disponible */
+  width: 100%;
+  overflow: hidden; /* Ocultar cualquier desbordamiento */
+}
+
+.estadisticas-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #343a40;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px; /* Ajustar margen inferior para mantener las proporciones */
+}
+
+.tab-container button {
+  padding: 10px 20px;
+  margin: 0 5px; /* Ajustar margen entre botones */
+  background-color: #DDC9A3;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  color: black;
+}
+
+.tab-container button.active {
+  background-color: #9F2241;
+  color: #ffffff;
+}
+
+.bottom-left button {
+  background-color: #9f2241;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.bottom-left button:hover {
+  background-color: #7b1a33;
+}

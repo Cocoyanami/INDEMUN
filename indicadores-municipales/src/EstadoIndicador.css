@@ -1,0 +1,25 @@
+.estado-indicador-container {
+    text-align: center;
+  }
+  
+  .estado-indicador-table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .estado-indicador-table th, .estado-indicador-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .estado-indicador-table th {
+    background-color: #f2f2f2;
+    text-align: center;
+  }
+  
+  .estado-indicador-table td {
+    text-align: center;
+    height: 50px; /* Altura de las celdas */
+  }
+  

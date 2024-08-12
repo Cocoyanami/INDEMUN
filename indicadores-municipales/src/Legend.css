@@ -1,0 +1,50 @@
+.legend {
+    position: absolute;
+    bottom: 70px; /* Ajusta esta distancia según la altura de la ventana de búsqueda */
+    right: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .legend-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .legend.closed {
+    width: auto;
+    height: auto;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+  }
+  
+  .toggle-button {
+    background: #9f2241;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 2px 5px; /* Ajuste del padding para un botón más pequeño */
+    cursor: pointer;
+    margin-left: 5px; /* Menos separación del texto "Semaforización" */
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+  }
+  
+  .legend-color {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 3px;
+  }
+  

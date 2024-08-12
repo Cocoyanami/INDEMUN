@@ -1,0 +1,27 @@
+.tabla-indicadores-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .tabla-indicadores-container h2 {
+    margin-bottom: 20px;
+  }
+  
+  .tabla-indicadores-container table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .tabla-indicadores-container th, .tabla-indicadores-container td {
+    border: 1px solid #ff0000;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .tabla-indicadores-container th {
+    background-color: #f2f2f2;
+  }
+  
