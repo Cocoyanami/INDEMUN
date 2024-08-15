@@ -3,29 +3,34 @@ services:
   frontend:
     build: ./indicadores-municipales
     ports:
-      - "3000:80"
+      - "3000:3000"
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/custom_default.conf
   
   backend:
     build: ./server
     ports:
       - "5000:5000"
     environment:
-      DB_HOST: db
+      DB_HOST: db 
       DB_PORT: 5432
       DB_USER: postgres
       DB_PASSWORD: yourpassword
-      DB_DATABASE: indicadores
+      DB_DATABASE: indemun
     depends_on:
       - db
-    command: bash -c "npm start && node loadData.js"  # Inicia la app y carga los datos
+    volumes:
+      - ./server/db:/home/desarrollo/coemere/indemun/indemun-hidalgo/server/db #Cambiar a tu ruta donde tienes la carpeta db en tu servidor
+    command: bash -c "npm start && node loadData.js"
 
   db:
-    image: postgres:latest
+    build: ./db
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: yourpassword
-      POSTGRES_DB: indicadores
+      POSTGRES_DB: indemun
     volumes:
-      - ./db:/docker-entrypoint-initdb.d/
+      - ./db:/data/db
+
     ports:
       - "5432:5432"
