@@ -579,7 +579,7 @@ app.get('/totales_2023', async (req, res) => {
 
 // Endpoint básico
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('Server is running correctly');
 });
 
 app.listen(port, () => {
