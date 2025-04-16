@@ -9,7 +9,7 @@ Este proyecto muestra el valor de los indicadores tanto en un mapa como en gráf
 
 1. **Clonar el Repositorio:**
     ```bash
-    git clone https://github.com/JesusParedes25/indemun-hidalgo.git
+    git clone 'https://github.com/Cocoyanami/INDEMUN.git'
     ```
 
 2. **Navegar al Directorio del Proyecto:**
