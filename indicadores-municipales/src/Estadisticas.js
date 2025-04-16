@@ -15,10 +15,22 @@ const Estadisticas = () => {
   const [activeTab, setActiveTab] = useState('indicadores');
   const [loading, setLoading] = useState(false);
   const [municipioOpen, setMunicipioOpen] = useState(false);
+  const [selectedYear, setSelectedYear] = useState('2023');
+  const [availableYears, setAvailableYears] = useState([]);
 
+  // Obtener años disponibles al cargar
   useEffect(() => {
+    fetch('http://localhost:5000/anios_disponibles')
+      .then(res => res.json())
+      .then(setAvailableYears)
+      .catch(console.error);
+  }, []);
+
+  // Obtener datos según el año seleccionado
+  useEffect(() => {
+    if (!selectedYear) return;
     setLoading(true);
-    fetch('http://localhost:5000/indicadores_modulo_2023')
+    fetch(`http://localhost:5000/indicadores_modulo/${selectedYear}`)
       .then(response => response.json())
       .then(data => {
         setData(data);
@@ -28,14 +40,11 @@ const Estadisticas = () => {
         console.error('Error fetching data:', error);
         setLoading(false);
       });
-  }, []);
+  }, [selectedYear]);
 
+  // Mostrar/ocultar selector de municipio según la pestaña
   useEffect(() => {
-    if (activeTab === 'indicadores') {
-      setMunicipioOpen(true);
-    } else {
-      setMunicipioOpen(false);
-    }
+    setMunicipioOpen(activeTab === 'indicadores');
   }, [activeTab]);
 
   const handleMunicipioChange = (value) => {
@@ -44,6 +53,11 @@ const Estadisticas = () => {
 
   const handleModuloChange = (value) => {
     setSelectedModulo(value);
+  };
+
+  const handleYearChange = (value) => {
+    setSelectedYear(value);
+    setSelectedMunicipio('');
   };
 
   const selectedData = data.find(item => item.Municipio === selectedMunicipio);
@@ -81,7 +95,7 @@ const Estadisticas = () => {
     }
 
     return {
-      labels: labels,
+      labels,
       datasets: [
         {
           label: `Indicadores de ${selectedMunicipio} - ${selectedModulo}`,
@@ -108,7 +122,7 @@ const Estadisticas = () => {
           maxRotation: 0,
           minRotation: 0,
           font: {
-            size: 10 
+            size: 10
           }
         },
       },
@@ -130,11 +144,23 @@ const Estadisticas = () => {
     <div className="estadisticas-container">
       <h2>Estadísticas</h2>
       <div className="tab-container">
-        <button className={activeTab === 'indicadores' ? 'active' : ''} onClick={() => setActiveTab('indicadores')}>Indicadores 2023</button>
-        <button className={activeTab === 'totales' ? 'active' : ''} onClick={() => setActiveTab('totales')}>Totales 2023</button>
+        <button className={activeTab === 'indicadores' ? 'active' : ''} onClick={() => setActiveTab('indicadores')}>Indicadores</button>
+        <button className={activeTab === 'totales' ? 'active' : ''} onClick={() => setActiveTab('totales')}>Totales</button>
       </div>
+
       {activeTab === 'indicadores' && (
         <div className="filters">
+          <Select
+            style={{ width: 200, marginRight: 10 }}
+            placeholder="Selecciona un año"
+            value={selectedYear}
+            onChange={handleYearChange}
+          >
+            {availableYears.map(anio => (
+              <Option key={anio} value={anio}>{anio}</Option>
+            ))}
+          </Select>
+
           <Select
             style={{ width: 200, marginRight: 10 }}
             onChange={handleMunicipioChange}
@@ -147,6 +173,7 @@ const Estadisticas = () => {
               <Option key={item.Municipio} value={item.Municipio}>{item.Municipio}</Option>
             ))}
           </Select>
+
           <Select
             style={{ width: 200 }}
             onChange={handleModuloChange}
@@ -164,8 +191,9 @@ const Estadisticas = () => {
           </Select>
         </div>
       )}
+
       {loading ? (
-        <Spin tip="Loading...">
+        <Spin tip="Cargando...">
           <div style={{ height: '300px' }}></div>
         </Spin>
       ) : (
@@ -177,11 +205,12 @@ const Estadisticas = () => {
           )}
           {activeTab === 'totales' && (
             <div className="chart-container">
-              <TotalesChart />
+              <TotalesChart year={selectedYear} />
             </div>
           )}
         </>
       )}
+
       <div className="bottom-left">
         <a href="/" className="back-button">Volver</a>
       </div>

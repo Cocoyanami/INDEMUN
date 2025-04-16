@@ -556,26 +556,31 @@ app.get('/indicadores_M8_etica', async (req, res) => {
 
 
 
-// ENDPOINTS DE TABLAS PARA GRÁFICOS
-// Endpoint para obtener datos de la tabla indicadores_modulo_2023
-app.get('/indicadores_modulo_2023', async (req, res) => {
+// Obtener indicadores por año (dinámico)
+app.get('/indicadores_modulo/:anio', async (req, res) => {
+  const anio = req.params.anio;
   try {
-    const result = await pool.query('SELECT * FROM indicadores_modulo_2023');
+    const result = await pool.query(`SELECT * FROM indicadores_modulo_${anio}`);
     res.json(result.rows);
   } catch (err) {
-    res.status(500).json({ error: 'Database error' });
+    res.status(500).json({ error: 'Error consultando la base de datos' });
   }
 });
 
-// Endpoint para obtener datos de la tabla de totales_2023
-app.get('/totales_2023', async (req, res) => {
+// Obtener años disponibles (opcional para selectores)
+app.get('/anios_disponibles', async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM totales_2023');
-    res.json(result.rows);
+    const result = await pool.query(`
+      SELECT table_name FROM information_schema.tables 
+      WHERE table_name LIKE 'indicadores_modulo_%'
+    `);
+    const anios = result.rows.map(row => row.table_name.split('_').pop());
+    res.json(anios);
   } catch (err) {
-    res.status(500).json({ error: 'Database error' });
+    res.status(500).json({ error: 'Error al obtener años disponibles' });
   }
 });
+
 
 // Endpoint básico
 app.get('/', (req, res) => {

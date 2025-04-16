@@ -852,6 +852,7 @@ const Mapa = () => {
           <option value="21">2021</option>
           <option value="22">2022</option>
           <option value="23">2023</option>
+          <option value="24">2024</option>
         </select>
       </div>
       <div className="search-container">

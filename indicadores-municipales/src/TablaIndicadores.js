@@ -2,22 +2,24 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './TablaIndicadores.css';
 
-const TablaIndicadores = () => {
+const TablaIndicadores = ({ year }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/indicadores_modulo_2023')
+    if (!year) return;
+
+    axios.get(`http://localhost:5000/indicadores_modulo/${year}`)
       .then(response => {
         setData(response.data);
       })
       .catch(error => {
         console.error('Error fetching data:', error);
       });
-  }, []);
+  }, [year]);
 
   return (
     <div className="tabla-indicadores-container">
-      <h2>Tabla de Indicadores</h2>
+      <h2>Tabla de Indicadores {year}</h2>
       {data.length > 0 ? (
         <table>
           <thead>
@@ -28,10 +30,10 @@ const TablaIndicadores = () => {
             </tr>
           </thead>
           <tbody>
-            {data.map((row, index) => (
-              <tr key={index}>
-                {Object.values(row).map((value, index) => (
-                  <td key={index}>{value}</td>
+            {data.map((row, rowIndex) => (
+              <tr key={rowIndex}>
+                {Object.values(row).map((value, colIndex) => (
+                  <td key={colIndex}>{value}</td>
                 ))}
               </tr>
             ))}

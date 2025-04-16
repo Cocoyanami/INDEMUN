@@ -15,20 +15,20 @@ services:
       DB_HOST: db 
       DB_PORT: 5432
       DB_USER: postgres
-      DB_PASSWORD: yourpassword
-      DB_DATABASE: indemun
+      DB_PASSWORD: user
+      DB_DATABASE: INDEMUN
     depends_on:
       - db
     volumes:
-      - ./server/db:/home/desarrollo/coemere/indemun/indemun-hidalgo/server/db #Cambiar a tu ruta donde tienes la carpeta db en tu servidor
+      - ./server/db:/home/desarrollo/coemere/INDEMUN/INDEMUN-HIDALGO/server/db #Cambiar a tu ruta donde tienes la carpeta db en tu servidor
     command: bash -c "npm start && node loadData.js"
 
   db:
     build: ./db
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: yourpassword
-      POSTGRES_DB: indemun
+      POSTGRES_PASSWORD: user
+      POSTGRES_DB: INDEMUN
     volumes:
       - ./db:/data/db
 
