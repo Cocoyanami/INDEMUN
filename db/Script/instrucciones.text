@@ -1,0 +1,12 @@
+1.- Compilar totales.py, genera el archivo resumen_indicadores_div.json
+2.- Compilar totales_divModulo.py, genera el archivo resumen_por_modulo.json
+3.- Compilar creador_csv.py, generara el archivo csv del año a seleccionar apartir de resumen_por_modulo.json
+
+
+
+1-Compilar  script.py para genera las claves del año seleccionado 
+2.- Compilar unscript.py para deshacer cambios 
+
+
+
+1.- Compilar totales_div.py para hacaer una verificacion de datos totales por año 

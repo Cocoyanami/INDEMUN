@@ -27,6 +27,10 @@ const Legend = () => {
             <span>Rezago</span>
           </div>
           <div className="legend-item">
+            <div className="legend-color" style={{ background: 'rgba(102, 45, 45, 0.95)' }}></div>
+            <span>Sin Información</span>
+            </div>
+          <div className="legend-item">
             <div className="legend-color" style={{ background: 'rgba(255, 255, 255, 0.8)' }}></div>
             <span>No Medible</span>
           </div>

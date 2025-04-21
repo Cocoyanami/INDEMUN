@@ -13,6 +13,8 @@ const getColor = (value) => {
       return 'white';
     case 5:
       return 'grey';
+      case 6:
+        return 'cherry';
     default:
       return 'black';
   }
@@ -32,6 +34,7 @@ const EstadoIndicador = ({ datos, municipio, nombreIndicador, tipoIndicador }) =
             <th>2021</th>
             <th>2022</th>
             <th>2023</th>
+            <th>2024</th>
           </tr>
         </thead>
         <tbody>
