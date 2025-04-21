@@ -3,7 +3,7 @@ import json
 import csv
 
 # === Año a exportar ===
-anio_objetivo = "20"
+anio_objetivo = "24"
 archivo_salida = f"indicadores_modulo_20{anio_objetivo}.csv"
 
 # === Mapeo de valores a sufijos ===

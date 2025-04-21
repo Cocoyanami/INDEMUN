@@ -38,10 +38,8 @@ const getColor = (value) => {
       return 'rgba(255, 255, 255, 0.8)'; // Blanco con 80% de opacidad
     case 5:
       return 'rgba(176, 176, 176, 0.8)'; // Gris con 80% de opacidad
-    case 6:
-      return 'rgba(102, 45, 45, 0.95)'; // Guinda con 80% de opacidad
     default:
-      return 'rgba(0, 0, 0, 0.8)';       // Negro con 80% de opacidad para valores desconocidos
+      return 'rgba(102, 45, 45, 0.95)';       // Negro con 80% de opacidad para valores desconocidos
   }
 };
 const uniqueSortedMunicipios = (data) => {
