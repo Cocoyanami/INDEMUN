@@ -13,10 +13,8 @@ const getColor = (value) => {
       return 'white';
     case 5:
       return 'grey';
-      case 6:
-        return 'cherry';
     default:
-      return 'black';
+      return 'cherry';
   }
 };
 
