@@ -61,3 +61,7 @@ Para más información, puedes contactar a la Dirección General de Análisis Ge
 http://sigeh.hidalgo.gob.mx/
 
 Desarrollador: jesus.paredez@hidalgo.gob.mx
+
+
+
+modificado por cocoyanomami@gmail.com
