@@ -41,7 +41,7 @@ const getColor = (value) => {
     case 6:
       return 'rgba(102, 45, 45, 0.95)'; // Cherry con 80% de opacidad
     default:
-      return 'rgba(0, 0, 0, 0.8)';       // Negro con 80% de opacidad para valores desconocidos
+      return 'rgba(102, 45, 45, 0.95)';       // Negro con 80% de opacidad para valores desconocidos
   }
 };
 const uniqueSortedMunicipios = (data) => {
