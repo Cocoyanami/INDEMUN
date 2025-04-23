@@ -15,8 +15,8 @@ services:
       DB_HOST: db 
       DB_PORT: 5432
       DB_USER: postgres
-      DB_PASSWORD: user
-      DB_DATABASE: INDEMUN
+      DB_PASSWORD: #contraseña de la base de datos
+      DB_DATABASE: #nombre de la base de datos
     depends_on:
       - db
     volumes:
@@ -27,8 +27,8 @@ services:
     build: ./db
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: user
-      POSTGRES_DB: INDEMUN
+      POSTGRES_PASSWORD:  #contraseña de la base de datos
+      POSTGRES_DB: #nombre de la base de datos
     volumes:
       - ./db:/data/db
 

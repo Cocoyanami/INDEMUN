@@ -2,8 +2,8 @@
 
 DB_HOST="localhost"
 DB_USER="postgres"
-DB_PASSWORD="user"
-DB_DATABASE="INDEMUN"
+DB_PASSWORD="user" #contraseña de la base de datos
+DB_DATABASE="INDEMUN" #nombre de la base de datos
 
 # === FUNCIONALIDAD OPCIONAL: eliminar todas las tablas existentes ===
 function drop_all_tables() {
