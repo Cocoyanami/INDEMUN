@@ -25,7 +25,7 @@ L.Icon.Default.mergeOptions({
 // Función para determinar el color según el valor del indicador
 const getColor = (value) => {
   if (value === null || value === undefined) {
-    return 'rgba(0, 0, 0, 0.0)'; // Transparente para valores no definidos
+    return 'rgba(102, 45, 45, 0.95)'; // Cherry para valores no definidos
   }
   switch (value) {
     case 1:
@@ -39,7 +39,7 @@ const getColor = (value) => {
     case 5:
       return 'rgba(176, 176, 176, 0.8)'; // Gris con 80% de opacidad
     case 6:
-      return 'rgba(102, 45, 45, 0.95)'; // Guinda con 80% de opacidad
+      return 'rgba(102, 45, 45, 0.95)'; // Cherry con 80% de opacidad
     default:
       return 'rgba(0, 0, 0, 0.8)';       // Negro con 80% de opacidad para valores desconocidos
   }
