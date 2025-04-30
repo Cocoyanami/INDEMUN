@@ -16,7 +16,7 @@ services:
       DB_PORT: 5432
       DB_USER: postgres
       DB_PASSWORD: yourpassword
-      DB_DATABASE: indemun
+      DB_DATABASE: INDEMUN
     depends_on:
       - db
     volumes:
@@ -28,7 +28,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: yourpassword
-      POSTGRES_DB: indemun
+      POSTGRES_DB: INDEMUN
     volumes:
       - ./db:/data/db
 

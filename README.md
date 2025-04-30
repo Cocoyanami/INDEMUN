@@ -29,7 +29,8 @@ Este proyecto muestra el valor de los indicadores tanto en un mapa como en gráf
 5. **Inicializar la Base de Datos con Datos GeoJSON y CSV:**
    - En una terminal separada, ingresa al contenedor de la base de datos que está en ejecución:
      ```bash
-     sudo docker exec -it indemun-hidalgo_db_1 bash
+     sudo docker exec -it indemun-hidalgo-db-1 bash
+
      ```
    - Ejecuta el script para cargar los datos GeoJSON y CSV en la base de datos:
      ```bash
